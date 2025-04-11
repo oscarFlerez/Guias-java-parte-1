@@ -26,6 +26,7 @@ public class Modelo_cuadro_combo extends javax.swing.JFrame {
         btnPares = new javax.swing.JButton();
         btnImpares = new javax.swing.JButton();
         etiResultado = new javax.swing.JLabel();
+        btnVaciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,20 +46,32 @@ public class Modelo_cuadro_combo extends javax.swing.JFrame {
 
         etiResultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
+        btnVaciar.setText("Vaciar");
+        btnVaciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVaciarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cboNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnPares)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnImpares))
-                    .addComponent(etiResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cboNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(btnPares)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnImpares))
+                            .addComponent(etiResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(btnVaciar)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -71,7 +84,9 @@ public class Modelo_cuadro_combo extends javax.swing.JFrame {
                     .addComponent(btnImpares))
                 .addGap(40, 40, 40)
                 .addComponent(etiResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(btnVaciar)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
@@ -94,6 +109,11 @@ public class Modelo_cuadro_combo extends javax.swing.JFrame {
         }
         cboNumeros.setModel(modelo);
     }                                          
+
+    private void btnVaciarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        cboNumeros.setModel(modelo);
+    }                                         
 
     /**
      * @param args the command line arguments
@@ -133,6 +153,7 @@ public class Modelo_cuadro_combo extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnImpares;
     private javax.swing.JButton btnPares;
+    private javax.swing.JButton btnVaciar;
     private javax.swing.JComboBox<String> cboNumeros;
     private javax.swing.JLabel etiResultado;
     // End of variables declaration                   
